@@ -1,0 +1,17 @@
+.productcard {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.productcard:hover {
+    scale: 1.1;
+}
+
+.productcard .title {
+    font-size: 16px;
+}
+
+.productcard .price {
+    font-weight: 500;
+    letter-spacing: 1px;
+}

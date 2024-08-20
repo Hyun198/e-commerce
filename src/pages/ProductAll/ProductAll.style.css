@@ -1,0 +1,28 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+
+@media (max-width: 1200px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3개의 컬럼으로 줄이기 */
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2개의 컬럼으로 줄이기 */
+    }
+}
+
+@media (max-width: 300px) {
+    .products {
+        grid-template-columns: 1fr;
+        /* 1개의 컬럼으로 줄이기 */
+    }
+}

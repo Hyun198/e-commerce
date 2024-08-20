@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import ProductAll from './pages/ProductAll'
+import ProductAll from './pages/ProductAll/ProductAll'
 import ProductDetail from './pages/ProductDetail'
 import Login from './pages/Login'
 import Navbar from './components/Navbar/Navbar';
