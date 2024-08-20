@@ -1,0 +1,48 @@
+.Login {
+    text-align: center;
+}
+
+.Login-form {
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #000;
+}
+
+.Login-form input {
+    padding: 15px;
+}
+
+.Login-form input::placeholder {
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.Login-form button {
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgb(199, 21, 21);
+    padding: 15px;
+}
+
+.Login-form .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Login-form .links a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Login-form .links a:hover {
+    color: rgba(68, 66, 66, 0.787);
+}

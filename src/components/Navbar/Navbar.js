@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.style.css'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
@@ -17,10 +18,10 @@ const Navbar = () => {
         <div className="navbar">
             <div className="login">
                 <FontAwesomeIcon icon={faUser} />
-                <div>Login</div>
+                <Link to="/login"><span>Login</span></Link>
             </div>
             <div className="logo">
-                <img src="hm.png" width="120" height="100" />
+                <Link to="/"><img src="hm.png" width="120" height="100" /></Link>
             </div>
             <div className="category">
                 <ul>
