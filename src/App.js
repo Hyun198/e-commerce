@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import ProductAll from './pages/ProductAll/ProductAll'
-import ProductDetail from './pages/ProductDetail/ProductDetail'
 import Login from './pages/Login/Login'
 import Navbar from './components/Navbar/Navbar';
+import PrivateRoute from './route/PrivateRoute';
 
 
 //3. 상품디테일페이지
@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
-        <Route path='/product/:id' element={<ProductDetail />} />
+        <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>
     </div>
   );

@@ -25,8 +25,8 @@ const Navbar = () => {
             </div>
             <div className="category">
                 <ul>
-                    {categories.map((category) => (
-                        <li># {category}</li>
+                    {categories.map((category, index) => (
+                        <li key={index}># {category}</li>
                     ))}
                 </ul>
                 <div className="search-bar">

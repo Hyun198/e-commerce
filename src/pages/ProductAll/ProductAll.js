@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './ProductAll.style.css'
+import { useNavigate } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
 const ProductAll = () => {
 
     const [productList, setProductList] = useState([]);
-
+    const navigate = useNavigate();
     const getProducts = async () => {
         let url = 'http://localhost:5000/products'
         let response = await axios.get(url);
@@ -19,8 +20,8 @@ const ProductAll = () => {
         <div>
             <h1>모두 보기</h1>
             <div className="products">
-                {productList?.map((product) => (
-                    <ProductCard product={product} />
+                {productList?.map((product, index) => (
+                    <ProductCard key={index} product={product} />
                 ))}
             </div>
         </div>
