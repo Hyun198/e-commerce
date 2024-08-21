@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios';
 import "./ProductDetail.style.css"
+import { useProductDetailQuery } from '../../hooks/useProductDetailQuery';
 const ProductDetail = () => {
     let { id } = useParams();
-    const [product, setProduct] = useState([]);
+
+    const { data: detail, isLoading, isError } = useProductDetailQuery(id);
+
+    if (isLoading) return <div>Loading...</div>;
+    if (isError) return <div>please wait...</div>;
+
 
     const ProductSizeList = [
         "XS", "S", "M", "L", "XL", "XXL"
@@ -14,26 +19,16 @@ const ProductDetail = () => {
         "White", "Black", "Sky"
     ]
 
-    const getProductDetail = async () => {
-        let url = `http://localhost:5000/products/${id}`
-        let response = await axios.get(url);
-        console.log(response);
-        setProduct(response.data);
-    }
 
-    useEffect(() => {
-        getProductDetail()
-
-    }, [])
 
     return (
         <div>
             <div className="product-detail">
                 <div className="detail-left">
-                    <img src={product.img} />
+                    <img src={detail.img} alt="detail.title" />
                 </div>
                 <div className="detail-right">
-                    <div className="title">{product.title}</div>
+                    <div className="title">{detail.title}</div>
                     <div className="options">
                         {ProductColors.map((color) => (
                             <button>{color}</button>
@@ -41,14 +36,14 @@ const ProductDetail = () => {
 
                     </div>
 
-                    <div className="price">₩{Number(product.price).toLocaleString()}</div>
+                    <div className="price">₩{Number(detail.price).toLocaleString()}</div>
                     <div className="size">
                         {ProductSizeList.map((size) => (
                             <button>{size}</button>
                         ))}
                     </div>
 
-                    <div>{product.new === true ? "New" : ""}</div>
+                    <div>{detail.new === true ? "New" : ""}</div>
 
                     <div className="detail-cart">
                         <button>장바구니</button>

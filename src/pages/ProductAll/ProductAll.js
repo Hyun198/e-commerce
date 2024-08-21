@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
 import './ProductAll.style.css'
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { useSearchParams } from 'react-router-dom';
@@ -17,7 +16,7 @@ const ProductAll = () => {
         if (products) {
             setProductList(products);
         }
-    }, [products]); // products가 변경될 때마다 productList를 업데이트
+    }, [products]); // product 변경될 때마다 productList를 업데이트
 
     if (isLoading) {
         return <div>Loading...</div>;

@@ -10,7 +10,7 @@ const ProductCard = (data) => {
     }
     return (
         <div className="productcard" onClick={showDetail}>
-            <img src={product.img} width="250" height="340" />
+            <img src={product.img} width="250" height="340" alt={product.title} />
             <div>Conscious choice</div>
             <div className="title">{product.title}</div>
             <div className="price">₩{Number(product.price).toLocaleString()}</div>
