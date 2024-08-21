@@ -1,0 +1,68 @@
+.product-detail {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.product-detail .detail-left img {
+    width: 800px;
+    height: 850px;
+}
+
+.product-detail .detail-right {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 45%;
+}
+
+.product-detail .detail-right .title {
+    font-size: 20px;
+
+}
+
+.product-detail .detail-right .price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-detail .detail-right .options button {
+    width: 85px;
+    padding: 10px;
+    margin: 0 8px;
+    border: none;
+    background-color: rgba(240, 248, 255, 0.738);
+    cursor: pointer;
+}
+
+.product-detail .detail-right .options button:hover {
+    background-color: rgba(160, 165, 169, 0.586);
+}
+
+.product-detail .detail-right .size button {
+    width: 85px;
+    padding: 10px;
+    margin: 0 8px;
+    border: none;
+    background-color: rgba(240, 248, 255, 0.738);
+    cursor: pointer;
+}
+
+.product-detail .detail-right .size button:hover {
+    background-color: rgba(160, 165, 169, 0.586);
+}
+
+.product-detail .detail-right .detail-cart button {
+    width: 100%;
+    padding: 20px;
+    font-size: 17px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.product-detail .detail-right .detail-cart button:hover {
+    scale: 1.1;
+}

@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './ProductAll.style.css'
-import { useNavigate } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import { useSearchParams } from 'react-router-dom';
+
 const ProductAll = () => {
 
-    const [productList, setProductList] = useState([]);
-    const navigate = useNavigate();
+    let [productList, setProductList] = useState([]);
+    const [query, setQuery] = useSearchParams();
+    let [error, setError] = useState("");
+
     const getProducts = async () => {
-        let url = 'http://localhost:5000/products'
-        let response = await axios.get(url);
-        setProductList(response.data);
-    }
+        try {
+            let keyword = query.get("q") || "";
+            let url = `http://localhost:5000/products?q=${keyword}`;
+            let response = await fetch(url);
+            let data = await response.json();
+            if (data.length < 1) {
+                if (keyword !== "") {
+                    setError(`${keyword}와 일치하는 상품이 없습니다`);
+                } else {
+                    throw new Error("결과가 없습니다");
+                }
+            }
+            setProductList(data);
+        } catch (err) {
+            setError(err.message);
+        }
+    };
 
     useEffect(() => {
-        getProducts()
-    }, [])
+        getProducts();
+    }, [query]);
+
     return (
         <div>
             <h1>모두 보기</h1>

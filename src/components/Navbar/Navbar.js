@@ -1,10 +1,11 @@
 import React from 'react'
 import './Navbar.style.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 const Navbar = () => {
+    const navigate = useNavigate();
     const categories = [
         "여성",
         "Divided",
@@ -14,6 +15,13 @@ const Navbar = () => {
         "Sale",
         "지속가능성",
     ]
+
+    const search = (event) => {
+        if (event.key === 'Enter') {
+            navigate(`?q=${event.target.value}`)
+        }
+    }
+
     return (
         <div className="navbar">
             <div className="login">
@@ -30,7 +38,7 @@ const Navbar = () => {
                     ))}
                 </ul>
                 <div className="search-bar">
-                    <input type="text" placeholder='Search...' />
+                    <input type="text" placeholder='Search...' onKeyPress={search} />
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
 
