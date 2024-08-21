@@ -3,36 +3,29 @@ import axios from 'axios';
 import './ProductAll.style.css'
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { useSearchParams } from 'react-router-dom';
+import { useProductQuery } from '../../hooks/useProductQuery';
 
 const ProductAll = () => {
 
-    let [productList, setProductList] = useState([]);
-    const [query, setQuery] = useSearchParams();
-    let [error, setError] = useState("");
+    const [productList, setProductList] = useState([]);
+    const [query] = useSearchParams();
 
-    const getProducts = async () => {
-        try {
-            let keyword = query.get("q") || "";
-            let url = `http://localhost:5000/products?q=${keyword}`;
-            let response = await fetch(url);
-            let data = await response.json();
-            if (data.length < 1) {
-                if (keyword !== "") {
-                    setError(`${keyword}와 일치하는 상품이 없습니다`);
-                } else {
-                    throw new Error("결과가 없습니다");
-                }
-            }
-            setProductList(data);
-        } catch (err) {
-            setError(err.message);
-        }
-    };
+    const keyword = query.get("q") || "";
+    const { data: products, isLoading, error, isError } = useProductQuery(keyword);
 
     useEffect(() => {
-        getProducts();
-    }, [query]);
+        if (products) {
+            setProductList(products);
+        }
+    }, [products]); // products가 변경될 때마다 productList를 업데이트
 
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (isError) {
+        return <div>Error: {error.message}</div>;
+    }
     return (
         <div>
             <h1>모두 보기</h1>

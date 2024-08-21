@@ -6,7 +6,6 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 const Navbar = ({ authenticate, setAuthenticate }) => {
 
-    console.log(authenticate);
     const navigate = useNavigate();
     const categories = [
         "여성",
