@@ -4,7 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
+
+    console.log(authenticate);
     const navigate = useNavigate();
     const categories = [
         "여성",
@@ -21,12 +23,16 @@ const Navbar = () => {
             navigate(`?q=${event.target.value}`)
         }
     }
+    const logout = () => {
+        setAuthenticate(false);
+        navigate("/")
+    }
 
     return (
         <div className="navbar">
             <div className="login">
                 <FontAwesomeIcon icon={faUser} />
-                <Link to="/login"><span>Login</span></Link>
+                {authenticate === true ? <div className="Logout" onClick={logout}><span>Logout</span> </div> : <Link to="/login"><span>Login</span></Link>}
             </div>
             <div className="logo">
                 <Link to="/"><img src="hm.png" width="120" height="100" /></Link>
