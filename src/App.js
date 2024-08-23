@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import ProductAll from './pages/ProductAll/ProductAll'
@@ -13,19 +12,14 @@ import NotFound from './pages/NotFound/NotFound';
 //6. 장바구니페이지
 //7. 상품 검색 페이지
 function App() {
-  const [authenticate, setAuthenticate] = useState(false);
-
-  useEffect(() => {
-
-  }, [authenticate]);
 
   return (
     <div className="App">
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
-        <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path='/product/:id' element={<PrivateRoute />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

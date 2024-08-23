@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './ProductAll.style.css'
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { useSearchParams } from 'react-router-dom';
-import { useProductQuery } from '../../hooks/useProductQuery';
+import { productAction } from '../../redux/actions/productAction'
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
 
-    const [productList, setProductList] = useState([]);
-    const [query] = useSearchParams();
+    const productList = useSelector(state => state.product.productList);
+    const [query, setQuery] = useSearchParams();
+    const dispatch = useDispatch()
 
-    const keyword = query.get("q") || "";
-    const { data: products, isLoading, error, isError } = useProductQuery(keyword);
+    const getProducts = () => {
+        let searchQuery = query.get("q") || "";
+        dispatch(productAction.getProducts(searchQuery))
+    }
 
     useEffect(() => {
-        if (products) {
-            setProductList(products);
-        }
-    }, [products]); // product 변경될 때마다 productList를 업데이트
+        getProducts();
 
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
+    }, [query]); // product 변경될 때마다 productList를 업데이트
 
-    if (isError) {
-        return <div>Error: {error.message}</div>;
-    }
+
     return (
         <div>
             <h1>모두 보기</h1>

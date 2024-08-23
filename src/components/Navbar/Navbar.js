@@ -4,7 +4,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
-const Navbar = ({ authenticate, setAuthenticate }) => {
+import { useSelector, useDispatch } from 'react-redux'
+import { authenticateAction } from '../../redux/actions/authenticateAction'
+
+
+const Navbar = () => {
 
     const navigate = useNavigate();
     const categories = [
@@ -16,6 +20,8 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         "Sale",
         "지속가능성",
     ]
+    const dispatch = useDispatch();
+    const authenticate = useSelector(state => state.auth.authenticate);
 
     const search = (event) => {
         if (event.key === 'Enter') {
@@ -23,7 +29,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         }
     }
     const logout = () => {
-        setAuthenticate(false);
+        dispatch(authenticateAction.logout())
         navigate("/")
     }
 
