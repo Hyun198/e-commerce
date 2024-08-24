@@ -1,9 +1,12 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+
 let initialState = {
     productList: [],
     selectedItem: null,
 }
 
-function productReducer(state = initialState, action) {
+/* function productReducer(state = initialState, action) {
     let { type, payload } = action;
     switch (type) {
         case "GET_PRODUCT_SUCCESS":
@@ -15,4 +18,22 @@ function productReducer(state = initialState, action) {
     }
 }
 
-export default productReducer;
+export default productReducer; */
+
+//redux-toolkit 사용
+
+const productSlice = createSlice({
+    name: "product",
+    initialState,
+    reducers: {
+        getAllProducts(state, action) {
+            state.productList = action.payload.data
+        },
+        getSingleProduct(state, action) {
+            state.selectedItem = action.payload.data
+        }
+    }
+})
+
+export const productActions = productSlice.actions
+export default productSlice.reducer //!마지막은 reducer!
