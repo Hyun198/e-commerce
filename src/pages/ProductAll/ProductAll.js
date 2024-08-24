@@ -11,7 +11,7 @@ const ProductAll = () => {
     const [query, setQuery] = useSearchParams();
     const dispatch = useDispatch()
 
-    const getProducts = () => {
+    const getProducts = async () => {
         let searchQuery = query.get("q") || "";
         //dispatch(productAction.getProducts(searchQuery))
         dispatch(fetchProducts(searchQuery));
