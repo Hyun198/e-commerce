@@ -26,7 +26,7 @@ export default productReducer; */
 
 export const fetchProducts = createAsyncThunk('product/fetchAll', async (searchQuery, thunkApi) => {
     try {
-        let url = `http://localhost:5000/products?q=${searchQuery}`
+        let url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products?q=${searchQuery}`
         let response = await fetch(url);
         return await response.json();
     }
@@ -38,7 +38,7 @@ export const fetchProducts = createAsyncThunk('product/fetchAll', async (searchQ
 
 export const fetchProductDetail = createAsyncThunk('product/fetchDetail', async (id, thunkApi) => {
     try {
-        let url = `http://localhost:5000/products/${id}`;
+        let url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products/${id}`;
         let response = await fetch(url);
         return await response.json();
     } catch (error) {
