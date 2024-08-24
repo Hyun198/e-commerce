@@ -6,9 +6,11 @@
 
     React, HTML, CSS, JavaScript, JsonServer, redux, redux-thunk
 
-# 개선사항
+# 프로젝트 세부 사항
 
     1. 로그인 페이지 (상태 관리로 해결)
         - useState()를 이용해서 authenticate, true || false 로 구분해 구현
-    2. redux middleware로 api호출 및 전역관리
-    3. 반응형 웹 디자인
+    2. redux middleware로 api호출 및 전역관리 (redux toolkit 적용)
+        
+    
+    3. 반응형 웹 디자인 (desktop, mobile)
