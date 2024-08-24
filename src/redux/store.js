@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import productReducer from "./reducers/productReducer";
+import productReducer from "./reducers/productSlice";
 import authenticateReducer from "./reducers/authenticateReducer";
 /* let store = createStore(rootReducer, applyMiddleware(thunk));
  */
