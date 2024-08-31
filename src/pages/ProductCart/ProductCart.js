@@ -32,30 +32,55 @@ const ProductCart = () => {
 
 
     return (
-        <div className="productCart">
+
+        <div>
             <h2>장바구니</h2>
             {cartItems.length === 0 ? (
-                <p>비어 있습니다.</p>
+                <p>장바구니가 비어 있습니다.</p>
             ) : (
-                <ul>
-                    {cartItems.map((item) => (
-                        <li key={item.id} >
-                            <img src={item.img} alt={item.title} width="100px" height="100px" />
-                            <h3>{item.title}</h3>
-                            <p>가격: {item.price}</p>
-                            수량:
-                            <input
-                                type="number"
-                                value={quantity[item.id]}
-                                onChange={(e) =>
-                                    handleInputChange(item.id, Number(e.target.value))
-                                } />
-                            <button onClick={() => handleRemove(item.id)}>삭제</button>
-                            <button onClick={() => handleUpdateQuantity(item.id)}>수정</button>
-                        </li>
-                    ))}
-                </ul>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>이미지</th>
+                            <th>상품명</th>
+                            <th>가격</th>
+                            <th>수량</th>
+                            <th>삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cartItems.map((item) => (
+                            <tr key={item.id}>
+                                <td>
+                                    <img src={item.img} alt={item.title} width="50" height="50" />
+                                </td>
+                                <td>{item.title}</td>
+                                <td>{item.price.toLocaleString()}원</td>
+                                <td>
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        value={quantity[item.id]} // 로컬 상태에서 수량 가져오기
+                                        onChange={(e) =>
+                                            handleInputChange(item.id, Number(e.target.value))
+                                        }
+                                    />
+                                    <button onClick={() => handleUpdateQuantity(item.id)}>수정</button>
+                                </td>
+                                <td>
+
+                                    <button onClick={() => handleRemove(item.id)}>삭제</button>
+                                </td>
+
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             )}
+
+            <div className="pay">
+                <button>결제하기</button>
+            </div>
         </div>
     )
 }
