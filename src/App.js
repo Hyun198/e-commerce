@@ -5,6 +5,7 @@ import Login from './pages/Login/Login'
 import Navbar from './components/Navbar/Navbar';
 import PrivateRoute from './route/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
+import ProductCart from './pages/ProductCart/ProductCart';
 
 //3. 상품디테일페이지
 //4. 로그아웃기능
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<ProductAll />} />
         <Route path="/login" element={<Login />} />
         <Route path='/product/:id' element={<PrivateRoute />} />
+        <Route path="/cart" element={<ProductCart />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

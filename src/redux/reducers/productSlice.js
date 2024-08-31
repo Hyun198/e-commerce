@@ -6,21 +6,8 @@ let initialState = {
     selectedItem: null,
     isLoading: false,
     error: null,
+    cartItems: [], //장바구니 항목 추가
 }
-
-/* function productReducer(state = initialState, action) {
-    let { type, payload } = action;
-    switch (type) {
-        case "GET_PRODUCT_SUCCESS":
-            return { ...state, productList: payload.data };
-        case "GET_SINGLE_PRODUCT_SUCCESS":
-            return { ...state, selectedItem: payload.data };
-        default:
-            return { ...state };
-    }
-}
-
-export default productReducer; */
 
 //redux-toolkit 사용
 
@@ -55,7 +42,30 @@ const productSlice = createSlice({
         },
         getSingleProduct(state, action) {
             state.selectedItem = action.payload.data
-        }
+        },
+        addToCart(state, action) {
+            const item = action.payload;
+            const existingItem = state.cartItems.find(
+                (cartItem) => cartItem.id === item.id
+            )
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                state.cartItems.push({ ...item, quantity: 1 });
+            }
+        },
+        removeFromCart(state, action) {
+            const itemId = action.payload;
+            state.cartItems = state.cartItems.filter((item) => item.id !== itemId)
+        },
+        updateCartItemQuantity(state, action) {
+            const { id, quantity } = action.payload;
+            const existingItem = state.cartItems.find((item) => item.id === id)
+
+            if (existingItem) {
+                existingItem.quantity = quantity;
+            }
+        },
     },
     //reactquery에서 iserror, isloading 이랑 비슷
     extraReducers: (builder) => {
@@ -83,5 +93,11 @@ const productSlice = createSlice({
     }
 })
 
-export const productActions = productSlice.actions
+export const {
+    getAllProducts,
+    getSingleProduct,
+    addToCart,
+    removeFromCart,
+    updateCartItemQuantity,
+} = productSlice.actions;
 export default productSlice.reducer //!마지막은 reducer!

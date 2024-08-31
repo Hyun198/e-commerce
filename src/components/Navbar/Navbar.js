@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.style.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faX, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faX, faMagnifyingGlass, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { useSelector, useDispatch } from 'react-redux'
 import { authenticateAction } from '../../redux/actions/authenticateAction'
@@ -27,11 +27,18 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const authenticate = useSelector(state => state.auth.authenticate);
 
+    const cartItems = useSelector((state) => state.product.cartItems);
+
+
     const search = (event) => {
         if (event.key === 'Enter') {
             navigate(`?q=${event.target.value}`)
         }
     }
+    const gotoCart = () => {
+        navigate("/cart")
+    }
+
     const logout = () => {
         dispatch(authenticateAction.logout())
         navigate("/")
@@ -41,6 +48,16 @@ const Navbar = () => {
         <div className="navbar">
             <div className="menu" onClick={toggleSlider}>
                 <FontAwesomeIcon icon={isSidebarOpen ? faX : faBars} />
+            </div>
+            <div className="cart">
+                {authenticate === true ?
+                    <div>
+                        <span className="cart-count">{cartItems.length}</span>
+                        <FontAwesomeIcon icon={faCartShopping} onClick={gotoCart} />
+                    </div>
+
+                    :
+                    <div></div>}
             </div>
             <div className="login">
                 <FontAwesomeIcon icon={faUser} />

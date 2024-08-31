@@ -12,3 +12,19 @@
         - useState()를 이용해서 authenticate, true || false 로 구분해 구현
     2. redux middleware로 api호출 및 전역관리
     3. 반응형 웹 디자인
+
+## 기존 redux 코드
+
+    /* function productReducer(state = initialState, action) {
+    let { type, payload } = action;
+    switch (type) {
+        case "GET_PRODUCT_SUCCESS":
+            return { ...state, productList: payload.data };
+        case "GET_SINGLE_PRODUCT_SUCCESS":
+            return { ...state, selectedItem: payload.data };
+        default:
+            return { ...state };
+    }
+    }
+
+    export default productReducer; */

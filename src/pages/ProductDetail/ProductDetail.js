@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import "./ProductDetail.style.css"
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductDetail } from '../../redux/reducers/productSlice';
+import { fetchProductDetail, addToCart } from '../../redux/reducers/productSlice';
+
 
 const ProductDetail = () => {
     let { id } = useParams();
@@ -12,6 +13,11 @@ const ProductDetail = () => {
     const getProductDetail = async () => {
         //dispatch(productAction.getProductDetail(id))
         dispatch(fetchProductDetail(id))
+    }
+
+    const handleAddtoCart = () => {
+        dispatch(addToCart(product))
+        alert("장바구니 추가");
     }
 
     useEffect(() => {
@@ -53,7 +59,7 @@ const ProductDetail = () => {
                     <div>{product?.new === true ? "New" : ""}</div>
 
                     <div className="detail-cart">
-                        <button>장바구니</button>
+                        <button onClick={handleAddtoCart}>장바구니</button>
                     </div>
                 </div>
 
