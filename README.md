@@ -1,7 +1,7 @@
 <div align="center">
 
   <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Ecommerce website project! </h1>
+  <h1>🛒 Ecommerce website project! </h1>
 
 <!-- Badges -->
 <h4>
@@ -44,12 +44,11 @@
 ### Tech Stack
 
 <ul>
-<li><a href="https://expressjs.com/">React.js</a></li>
-<li><a href="https://go.dev/">Javascript</a></li>
-<li><a href="https://nestjs.com/">Html</a></li>
-<li><a href="https://nestjs.com/">CSS</a></li>
-<li><a href="https://nestjs.com/">redux</a></li>
-<li><a href="https://nestjs.com/">redux-thunk</a></li>
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" alt="javascript" />
+   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="html" />
+   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css" />
+   <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="redux" />
+   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" />
 </ul>
 
 <!-- Features -->
