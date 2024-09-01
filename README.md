@@ -4,10 +4,12 @@
 
 <!-- Badges -->
 <h4>
-    <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
+    <a href="https://hyun198-ecommerce.netlify.app">View Demo</a>
 </h4>
 
-<p>H&M 웹 사이트를 참고해 해당 사이트의 제품 정보들을 이용해 api호출, 웹 디자인을 직접 함.</p>
+<p>H&M 웹 사이트를 참고하여 상품과 디자인을 이용했지만</p>
+<p>해당 웹 사이트에는 없는 반응형 디자인 및 장바구니 기능, 카테고리 기능은 추가로 구현</p>
+
 </div>
 
 <br />
@@ -23,6 +25,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Acknowledgements](#acknowledgements)
+- [Contributors](#contributors)
 
 <!-- About the Project -->
 
@@ -102,6 +105,12 @@ Start the server
 ```bash
   npm start
 ```
+
+## contributors
+
+    I will keep updating this project for better result👍
+
+    But if you have smt to help me, let me know please👋
 
 <!-- Acknowledgments -->
 
