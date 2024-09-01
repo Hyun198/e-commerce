@@ -1,6 +1,5 @@
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
   <h1>🛒 Ecommerce website project! </h1>
 
 <!-- Badges -->
@@ -23,17 +22,11 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-  - [Code of Conduct](#code-of-conduct)
-- [License](#license)
-- [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
 <!-- About the Project -->
 
-## About the Project
+## 💻About the Project
 
 <div align="center"> 
   <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
@@ -41,7 +34,7 @@
 
 <!-- TechStack -->
 
-### Tech Stack
+### ⚡Tech Stack⚡
 
 <ul>
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white" alt="javascript" />
@@ -68,7 +61,7 @@
 This project uses Yarn as package manager
 
 ```bash
- npm install --global yarn
+ npm install --global npm
 ```
 
 <!-- Installation -->
@@ -78,7 +71,7 @@ This project uses Yarn as package manager
 Install my-project with npm
 
 ```bash
-  yarn install my-project
+  npm install my-project
   cd my-project
 ```
 
@@ -101,26 +94,14 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  yarn install
+  npm install
 ```
 
 Start the server
 
 ```bash
-  yarn start
+  npm start
 ```
-
-<!-- Contributing -->
-
-## Contributing
-
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
-</a>
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
 
 <!-- Acknowledgments -->
 
@@ -128,7 +109,5 @@ See `contributing.md` for ways to get started.
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
-- [Shields.io](https://shields.io/)
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
-- [Readme Template](https://github.com/othneildrew/Best-README-Template)
+- [Redux](https://ko.redux.js.org/introduction/getting-started/)
+- [React Redux](https://react-redux.js.org/)
