@@ -17,10 +17,9 @@ const Navbar = () => {
     const navigate = useNavigate();
     const categories = [
         "여성",
-        "Divided",
         "남성",
         "유아",
-        "아동",
+        "공용",
         "Sale",
         "지속가능성",
     ]
@@ -42,6 +41,11 @@ const Navbar = () => {
     const logout = () => {
         dispatch(authenticateAction.logout())
         navigate("/")
+    }
+
+    const handleCategoryClick = (category) => {
+        console.log(category);
+        navigate(`/?category=${category}`)
     }
 
     return (
@@ -69,7 +73,7 @@ const Navbar = () => {
             <div className="category">
                 <ul>
                     {categories.map((category, index) => (
-                        <li key={index}># {category}</li>
+                        <li key={index} onClick={() => handleCategoryClick(category)}># {category}</li>
                     ))}
                 </ul>
                 <div className="search-bar">

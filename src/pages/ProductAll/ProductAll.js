@@ -13,6 +13,10 @@ const ProductAll = () => {
 
     const getProducts = async () => {
         let searchQuery = query.get("q") || "";
+        let categoryQuery = query.get("category") || "";
+        if (categoryQuery) {
+            dispatch(fetchProducts(categoryQuery));
+        }
         //dispatch(productAction.getProducts(searchQuery))
         dispatch(fetchProducts(searchQuery));
     }

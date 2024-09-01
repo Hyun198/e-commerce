@@ -7,6 +7,7 @@
             "price":99900,
             "choice":true,
             "new":true,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -17,6 +18,7 @@
             "price":29900,
             "choice":true,
             "new":true,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -27,6 +29,7 @@
             "price":39900,
             "choice":false,
             "new":true,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -37,6 +40,7 @@
             "price":39900,
             "choice":false,
             "new":true,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -47,6 +51,7 @@
             "price":29900,
             "choice":true,
             "new":false,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -57,6 +62,7 @@
             "price":39900,
             "choice":false,
             "new":false,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -67,6 +73,7 @@
             "price":39900,
             "choice":true,
             "new":false,
+            "category": "남성",
             "size":["S","M","L"]
 
         },
@@ -77,6 +84,7 @@
             "price":99900,
             "choice":false,
             "new":true,
+            "category": "공용",
             "size":["S","M","L"]
 
         },
@@ -87,6 +95,7 @@
             "price":14900,
             "choice":true,
             "new":true,
+            "category": "공용",
             "size":["S","M","L"]
 
         },
@@ -97,6 +106,7 @@
             "price":19900,
             "choice":false,
             "new":true,
+            "category": "공용",
             "size":["S","M","L"]
 
         },
@@ -107,6 +117,7 @@
             "price":19900,
             "choice":true,
             "new":false,
+            "category": "공용",
             "size":["S","M","L"]
 
         },
@@ -117,6 +128,7 @@
             "price":29900,
             "choice":true,
             "new":true,
+            "category": "공용",
             "size":["S","M","L"]
 
         },
@@ -127,6 +139,7 @@
             "price":14900,
             "choice":true,
             "new":true,
+            "category": "여성",
             "size":["S","M","L"]
 
         },
@@ -137,6 +150,7 @@
             "price":29900,
             "choice":false,
             "new":false,
+            "category": "공용",
             "size":["S","M","L"]
 
         }
