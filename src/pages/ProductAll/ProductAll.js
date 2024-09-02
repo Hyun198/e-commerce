@@ -30,16 +30,21 @@ const ProductAll = () => {
 
     return (
         <div>
-            <div className="video-container">
-                <video src={video} autoPlay loop muted />
-                <div className="container">
-                    <h2 className="wlc">Welcome</h2>
-                    <h1 className="title">H & M</h1>
+
+            {!currentQuery && (
+                <div className="video-container">
+                    <video src={video} autoPlay loop muted />
+                    <div className="container">
+                        <h2 className="wlc">Welcome</h2>
+                        <h1 className="title">H & M</h1>
+                    </div>
                 </div>
-            </div>
+            )}
 
+            {/* 카테고리나 검색어에 따라 제목을 다르게 표시합니다. */}
+            <h1>{currentQuery ? `${currentQuery} 의상` : "모두 보기"}</h1>
 
-            <h1>{currentQuery ? currentQuery + " 의상" : "모두 보기"}</h1>
+            {/* 제품 리스트를 렌더링합니다. */}
             <div className="products">
                 {productList?.map((product, index) => (
                     <ProductCard key={index} product={product} />

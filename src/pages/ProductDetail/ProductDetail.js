@@ -20,6 +20,10 @@ const ProductDetail = () => {
         alert("장바구니 추가");
     }
 
+    const handleGotoPay = () => {
+
+    }
+
     useEffect(() => {
         getProductDetail()
     }, [])
@@ -60,6 +64,7 @@ const ProductDetail = () => {
 
                     <div className="detail-cart">
                         <button onClick={handleAddtoCart}>장바구니</button>
+                        <button onClick={handleGotoPay}>구매하기</button>
                     </div>
                 </div>
 

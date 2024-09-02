@@ -7,11 +7,12 @@ import PrivateRoute from './route/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
 import ProductCart from './pages/ProductCart/ProductCart';
 
-//3. 상품디테일페이지
-//4. 로그아웃기능
-//5. 마이페이지
-//6. 장바구니페이지
-//7. 상품 검색 페이지
+//개선사항
+//1. 위시리스트
+//2. 상품 정보를 함께 넘기기 (사이즈, 색상, )
+//3. 결제 페이지
+//4. 디테일 페이지에서 결제 페이지로 이동
+
 function App() {
 
   return (

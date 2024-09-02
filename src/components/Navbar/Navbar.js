@@ -21,7 +21,6 @@ const Navbar = () => {
         "유아",
         "공용",
         "Sale",
-        "지속가능성",
     ]
     const dispatch = useDispatch();
     const authenticate = useSelector(state => state.auth.authenticate);
