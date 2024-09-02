@@ -89,7 +89,7 @@ const Navbar = () => {
                 </div>
                 <ul>
                     {categories.map((category, index) => (
-                        <li key={index}># {category}</li>
+                        <li key={index} onClick={() => handleCategoryClick(category)}># {category}</li>
                     ))}
                 </ul>
 

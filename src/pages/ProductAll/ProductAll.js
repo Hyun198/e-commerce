@@ -12,12 +12,9 @@ const ProductAll = () => {
     const dispatch = useDispatch()
 
     const getProducts = async () => {
-        let searchQuery = query.get("q") || "";
-        let categoryQuery = query.get("category") || "";
-        if (categoryQuery) {
-            dispatch(fetchProducts(categoryQuery));
-        }
-        //dispatch(productAction.getProducts(searchQuery))
+        let searchQuery = query.get("q") || query.get("category") || ""; // 카테고리나 검색어가 있을 때 사용
+
+        // 검색어가 있을 경우에만 fetchProducts를 디스패치
         dispatch(fetchProducts(searchQuery));
     }
 
