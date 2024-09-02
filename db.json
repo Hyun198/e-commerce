@@ -8,6 +8,7 @@
             "choice":true,
             "new":true,
             "category": "여성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -19,6 +20,7 @@
             "choice":true,
             "new":true,
             "category": "여성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -30,6 +32,7 @@
             "choice":false,
             "new":true,
             "category": "여성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -41,6 +44,7 @@
             "choice":false,
             "new":true,
             "category": "여성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -52,6 +56,7 @@
             "choice":true,
             "new":false,
             "category": "여성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -63,6 +68,7 @@
             "choice":false,
             "new":false,
             "category": "여성",
+            "sale":true,
             "size":["S","M","L"]
 
         },
@@ -74,6 +80,7 @@
             "choice":true,
             "new":false,
             "category": "남성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -85,6 +92,7 @@
             "choice":false,
             "new":true,
             "category": "공용",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -96,6 +104,7 @@
             "choice":true,
             "new":true,
             "category": "공용",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -107,6 +116,7 @@
             "choice":false,
             "new":true,
             "category": "유아",
+            "sale":true,
             "size":["S","M","L"]
 
         },
@@ -118,6 +128,7 @@
             "choice":true,
             "new":false,
             "category": "공용",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -129,6 +140,7 @@
             "choice":true,
             "new":true,
             "category": "공용",
+            "sale":true,
             "size":["S","M","L"]
 
         },
@@ -140,6 +152,7 @@
             "choice":true,
             "new":true,
             "category": "여성",
+            "sale":false,
             "size":["S","M","L"]
 
         },
@@ -151,6 +164,7 @@
             "choice":false,
             "new":false,
             "category": "공용",
+            "sale":true,
             "size":["S","M","L"]
 
         }

@@ -24,9 +24,12 @@ const ProductAll = () => {
     }, [query]); // product 변경될 때마다 productList를 업데이트
 
 
+    const currentQuery = query.get("category");
+
+
     return (
         <div>
-            <h1>모두 보기</h1>
+            <h1>{currentQuery ? currentQuery + " 의상" : "모두 보기"}</h1>
             <div className="products">
                 {productList?.map((product, index) => (
                     <ProductCard key={index} product={product} />
