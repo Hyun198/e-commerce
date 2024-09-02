@@ -120,3 +120,4 @@ Use this section to mention useful resources and libraries that you have used in
 
 - [Redux](https://ko.redux.js.org/introduction/getting-started/)
 - [React Redux](https://react-redux.js.org/)
+- [Json-server](https://my-json-server.typicode.com/)
