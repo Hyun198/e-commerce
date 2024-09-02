@@ -14,7 +14,12 @@ let initialState = {
 export const fetchProducts = createAsyncThunk('product/fetchAll', async (searchQuery, thunkApi) => {
     console.log("productSLice:  ", searchQuery);
     try {
-        let url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products?q=${searchQuery}`
+        let url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products`
+        if (searchQuery === "Sale") {
+            url += '?sale=true';
+        } else if (searchQuery) {
+            url += `?q=${searchQuery}`;
+        }
         let response = await fetch(url);
         console.log(response);
         return await response.json();
