@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import './ProductAll.style.css'
+import video from '../../assets/2024.mp4';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { useSearchParams } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/reducers/productSlice';
+
+
 const ProductAll = () => {
 
     const productList = useSelector(state => state.product.productList);
@@ -28,6 +30,15 @@ const ProductAll = () => {
 
     return (
         <div>
+            <div className="video-container">
+                <video src={video} autoPlay loop muted />
+                <div className="container">
+                    <h2 className="wlc">Welcome</h2>
+                    <h1 className="title">H & M</h1>
+                </div>
+            </div>
+
+
             <h1>{currentQuery ? currentQuery + " 의상" : "모두 보기"}</h1>
             <div className="products">
                 {productList?.map((product, index) => (

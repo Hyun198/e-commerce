@@ -5,6 +5,39 @@
     padding: 20px;
 }
 
+.video-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.video-container .container {
+    position: absolute;
+    color: white;
+    width: 77%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.video-container .container .wlc {
+    font-size: 5em;
+}
+
+.video-container .container .title {
+    font-size: 3.5em;
+    color: red;
+}
+
 
 @media (max-width: 1200px) {
     .products {
