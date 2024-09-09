@@ -1,3 +1,7 @@
+.h1-tag {
+    text-align: center;
+}
+
 .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -36,6 +40,23 @@
 .video-container .container .title {
     font-size: 3.5em;
     color: red;
+}
+
+
+
+/*image-slider*/
+.carousel {
+    margin-top: 20px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.slider img {
+    width: 500px;
+    height: 600px;
+    object-fit: contain;
 }
 
 

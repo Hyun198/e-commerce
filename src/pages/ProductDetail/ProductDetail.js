@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import "./ProductDetail.style.css"
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductDetail, addToCart } from '../../redux/reducers/productSlice';
 
+//바로 구매하기 눌렀을때 id값이랑 같이 넘어가게?
 
 const ProductDetail = () => {
     let { id } = useParams();
     const product = useSelector((state) => state.product.selectedItem)
     const dispatch = useDispatch()
+    const navigate = useNavigate();
 
     const getProductDetail = async () => {
         //dispatch(productAction.getProductDetail(id))
@@ -20,9 +22,6 @@ const ProductDetail = () => {
         alert("장바구니 추가");
     }
 
-    const handleGotoPay = () => {
-
-    }
 
     useEffect(() => {
         getProductDetail()
@@ -64,7 +63,7 @@ const ProductDetail = () => {
 
                     <div className="detail-cart">
                         <button onClick={handleAddtoCart}>장바구니</button>
-                        <button onClick={handleGotoPay}>구매하기</button>
+
                     </div>
                 </div>
 
