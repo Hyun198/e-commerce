@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import PrivateRoute from './route/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
 import ProductCart from './pages/ProductCart/ProductCart';
+import Payment from './pages/Payment/Payment';
 
 //개선사항
 //1. 위시리스트
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/product/:id' element={<PrivateRoute />} />
         <Route path="/cart" element={<ProductCart />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

@@ -30,6 +30,9 @@ const ProductCart = () => {
         dispatch(updateCartItemQuantity({ id, quantity: quantity[id] }));
     };
 
+    const GotoPayment = () => {
+        navigate('/payment');
+    }
 
     return (
 
@@ -41,7 +44,7 @@ const ProductCart = () => {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>이미지</th>
+                            <th>상품 사진</th>
                             <th>상품명</th>
                             <th>가격</th>
                             <th>수량</th>
@@ -79,7 +82,7 @@ const ProductCart = () => {
             )}
 
             <div className="pay">
-                <button>결제하기</button>
+                <button onClick={GotoPayment}>결제하기</button>
             </div>
         </div>
     )

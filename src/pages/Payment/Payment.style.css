@@ -1,0 +1,147 @@
+.payment {
+    text-align: center;
+}
+
+.all-side {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/*------------------left-side-------------------*/
+
+.all-side .left-side {
+    width: 60%;
+    /* 전체 넓이의 60% 차지 */
+}
+
+.left-side,
+.right-side {
+    flex: 1;
+}
+
+.all-side .left-side .product {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.all-side .left-side .product img {
+    width: 120px;
+    /* 이미지 크기 조정 */
+    height: auto;
+    margin-right: 20px;
+    /* 이미지와 설명 사이 간격 */
+}
+
+.all-side .left-side .product .product-desc {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.product-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    margin-bottom: 10px;
+}
+
+.cart-detail p {
+    margin: 5px 0;
+}
+
+
+
+/*------------------right-side-------------------*/
+
+.right-side {
+    width: 35%;
+    /* 전체 넓이의 35% 차지 */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.right-side .promo-code {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 15px;
+}
+
+
+.right-side .promo-code .promo-input {
+    display: flex;
+    gap: 10px;
+}
+
+.right-side .promo-code input {
+    width: 230px;
+    height: 45px;
+}
+
+.right-side .promo-code button {
+    width: 100px;
+    height: 45px;
+}
+
+.right-side .final-desc {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: none;
+}
+
+.right-side .final-desc:nth-child(3) {
+    border-bottom: 2px solid black;
+
+}
+
+.right-side .pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .all-side {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .all-side .left-side {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .left-side .product img {
+        width: 100%;
+        /* 이미지 너비를 100%로 */
+    }
+
+    .right-side {
+        width: 100%;
+        margin-top: 20px;
+        /* .left-side 아래에 여백 추가 */
+    }
+
+    .right-side .pay {
+        font-size: 1rem;
+        /* 결제 버튼 폰트 크기 조정 */
+        padding: 10px;
+    }
+}
