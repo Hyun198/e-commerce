@@ -80,6 +80,7 @@ const ProductAll = () => {
                 responsive={responsive}
                 autoPlay={true}
                 autoPlaySpeed={1000}
+                infinite={true}
             >
                 {images.map((image, index) => (
                     <div className="slider">
