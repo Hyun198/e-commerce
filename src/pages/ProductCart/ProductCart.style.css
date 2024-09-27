@@ -1,3 +1,10 @@
+.Empty_cart {
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+
+}
+
 .table {
     width: 100%;
     padding: 20px;
@@ -40,6 +47,21 @@
 
 .table button:hover {
     background-color: #e60000;
+}
+
+.item_price {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.item_price p {
+    height: 1px;
+    width: 250px;
+    background-color: black;
 }
 
 .pay {

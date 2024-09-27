@@ -7,6 +7,11 @@ let initialState = {
     isLoading: false,
     error: null,
     cartItems: [], //장바구니 항목 추가
+    totalPrice: 0,
+}
+
+const calculateTotalPrice = (cartItems) => {
+    return cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 }
 
 //redux-toolkit 사용
@@ -57,13 +62,16 @@ const productSlice = createSlice({
             )
             if (existingItem) {
                 existingItem.quantity += 1;
+                existingItem.price += item.price;
             } else {
                 state.cartItems.push({ ...item, quantity: 1 });
             }
+            state.totalPrice = calculateTotalPrice(state.cartItems);
         },
         removeFromCart(state, action) {
             const itemId = action.payload;
             state.cartItems = state.cartItems.filter((item) => item.id !== itemId)
+            state.totalPrice = calculateTotalPrice(state.cartItems);
         },
         updateCartItemQuantity(state, action) {
             const { id, quantity } = action.payload;
@@ -72,6 +80,7 @@ const productSlice = createSlice({
             if (existingItem) {
                 existingItem.quantity = quantity;
             }
+            state.totalPrice = calculateTotalPrice(state.cartItems);
         },
     },
     //reactquery에서 iserror, isloading 이랑 비슷

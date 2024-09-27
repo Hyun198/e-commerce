@@ -1,14 +1,11 @@
 import React from 'react'
 import './Payment.style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+
 const Payment = () => {
 
     const items = useSelector((state) => state.product.cartItems);
-
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
+    const totalPrice = useSelector((state) => state.product.totalPrice);
 
 
     return (
@@ -32,24 +29,17 @@ const Payment = () => {
                     ))}
                 </div>
                 <div className="right-side">
-                    <div className="promo-code">
-                        <p>할인 코드 추가</p>
-                        <div className="promo-input">
-                            <input type="text" />
-                            <button>추가</button>
-                        </div>
-                    </div>
                     <div className="final-desc">
                         <p>주문 가격</p>
-                        <p>₩ 19,900</p>
+                        <p>₩ {(totalPrice).toLocaleString()}</p>
                     </div>
                     <div className="final-desc">
                         <p>배송</p>
-                        <p>₩ 2,900</p>
+                        <p>₩ 3,000</p>
                     </div>
                     <div className="final-desc">
                         <p>합계: </p>
-                        <p>₩22,800</p>
+                        <p>₩ {(totalPrice + 3000).toLocaleString()}</p>
                     </div>
                     <button className="pay">결제 계속하기</button>
                 </div>

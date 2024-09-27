@@ -13,6 +13,8 @@
 .all-side .left-side {
     width: 60%;
     /* 전체 넓이의 60% 차지 */
+    background-color: #cbc8c8c7;
+    margin-right: 10px;
 }
 
 .left-side,
@@ -22,14 +24,15 @@
 
 .all-side .left-side .product {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    margin: auto;
     margin-bottom: 20px;
 }
 
 .all-side .left-side .product img {
     width: 120px;
     /* 이미지 크기 조정 */
-    height: auto;
+    height: 100%;
     margin-right: 20px;
     /* 이미지와 설명 사이 간격 */
 }
@@ -58,36 +61,14 @@
 /*------------------right-side-------------------*/
 
 .right-side {
+    position: relative;
     width: 35%;
     /* 전체 넓이의 35% 차지 */
     background-color: #f9f9f9;
     border-radius: 8px;
 }
 
-.right-side .promo-code {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-    padding: 15px;
-}
 
-
-.right-side .promo-code .promo-input {
-    display: flex;
-    gap: 10px;
-}
-
-.right-side .promo-code input {
-    width: 230px;
-    height: 45px;
-}
-
-.right-side .promo-code button {
-    width: 100px;
-    height: 45px;
-}
 
 .right-side .final-desc {
     display: flex;
@@ -101,6 +82,11 @@
 
 }
 
+.right-side button {
+    position: absolute;
+    bottom: 0px;
+}
+
 .right-side .pay {
     display: flex;
     justify-content: center;
@@ -112,8 +98,14 @@
     padding: 10px;
     width: 100%;
     margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
 }
 
+.right-side .pay:hover {
+    background-color: aliceblue;
+    color: black;
+}
 
 
 @media screen and (max-width:768px) {
