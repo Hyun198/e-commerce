@@ -10,7 +10,7 @@ const responsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3
+        items: 4
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -43,7 +43,7 @@ const ImageSlider = () => {
                 className='carousel'
                 responsive={responsive}
                 autoPlay={true}
-                autoPlaySpeed={1000}
+                autoPlaySpeed={5000}
                 infinite={true}
             >
                 {images.map((image, index) => (

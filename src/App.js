@@ -7,6 +7,7 @@ import PrivateRoute from './route/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
 import ProductCart from './pages/ProductCart/ProductCart';
 import Payment from './pages/Payment/Payment';
+import Footer from './components/footer/Footer';
 
 //개선사항
 //1. 위시리스트
@@ -27,6 +28,7 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
