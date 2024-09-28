@@ -1,0 +1,41 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    height: 500px;
+    background-color: rgb(212, 213, 215);
+}
+
+.footer-container .footer-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.footer-container .socials ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.footer-container .socials ul li {
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+
+.footer-container .info {
+    text-align: center;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.footer-container .info a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer-container .info p img {
+    padding-top: 10px;
+}
