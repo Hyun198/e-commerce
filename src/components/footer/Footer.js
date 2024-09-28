@@ -3,6 +3,33 @@ import './Footer.style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faSpotify, faYoutube, faPinterest, faTiktok } from '@fortawesome/free-brands-svg-icons'
 
+const categories = [
+    "Women",
+    "Men",
+    "Baby",
+    "Kids",
+    "H&M HOME",
+    "Sport",
+    "Sale",
+    "Magazine",
+]
+
+const company_info = [
+    "H&M 채용정보",
+    "H&M 회사 소개",
+    "H&M Group지속가능성",
+    "언론",
+    "IR 정보",
+]
+
+const services = [
+    "고객 서비스",
+    "내 계정",
+    "매장 찾기",
+    "개인 정보 처리 방침",
+    "문의하기",
+    "사기 신고",
+]
 
 
 const Footer = () => {
@@ -10,15 +37,31 @@ const Footer = () => {
         <div className='footer-container'>
             <div className="footer-menu">
                 <div>
-                    카테고리
-                    <ul>
-                        <li>Women</li>
-                        <li>Men</li>
-                        <li>Baby</li>
-                    </ul>
+                    <h2>카테고리</h2>
+                    {categories.map((category) => (
+                        <ul>
+                            <li>{category}</li>
+                        </ul>
+
+                    ))}
                 </div>
-                <div>기업 정보</div>
-                <div>고객 지원</div>
+                <div>
+                    <h2>기업 정보</h2>
+                    {company_info.map((info) => (
+                        <ul>
+                            <li>{info}</li>
+                        </ul>
+                    ))}
+
+                </div>
+                <div>
+                    <h2>고객 지원</h2>
+                    {services.map((service) => (
+                        <ul>
+                            <li>{service}</li>
+                        </ul>
+                    ))}
+                </div>
             </div>
             <div className="socials">
                 <ul>

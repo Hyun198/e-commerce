@@ -27,7 +27,7 @@
 
 .navbar .login span {
     cursor: pointer;
-
+    font-size: 1.5rem;
 }
 
 
@@ -72,7 +72,7 @@
 
 .navbar .category ul li {
     padding: 10px;
-    text-transform: capitalize;
+    font-size: 1.3rem;
     cursor: pointer;
 }
 

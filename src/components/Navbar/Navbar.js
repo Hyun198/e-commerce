@@ -43,7 +43,6 @@ const Navbar = () => {
     }
 
     const handleCategoryClick = (category) => {
-        console.log(category);
         navigate(`/?category=${category}`)
     }
 
