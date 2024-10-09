@@ -19,14 +19,13 @@ const calculateTotalPrice = (cartItems) => {
 export const fetchProducts = createAsyncThunk('product/fetchAll', async (searchQuery, thunkApi) => {
     console.log("productSLice:  ", searchQuery);
     try {
-        let url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products`
+        const url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products`
         if (searchQuery === "Sale") {
             url += '?sale=true';
         } else if (searchQuery) {
             url += `?q=${searchQuery}`;
         }
-        let response = await fetch(url);
-        console.log(response);
+        const response = await fetch(url);
         return await response.json();
     }
     catch (error) {
@@ -37,8 +36,8 @@ export const fetchProducts = createAsyncThunk('product/fetchAll', async (searchQ
 
 export const fetchProductDetail = createAsyncThunk('product/fetchDetail', async (id, thunkApi) => {
     try {
-        let url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products/${id}`;
-        let response = await fetch(url);
+        const url = `https://my-json-server.typicode.com/Hyun198/e-commerce/products/${id}`;
+        const response = await fetch(url);
         return await response.json();
     } catch (error) {
         thunkApi.rejectWithValue(error.message)
